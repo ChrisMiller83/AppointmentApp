@@ -3,8 +3,12 @@ package model;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
+/**
+ * Customer model class.
+ */
 public class Customer {
     private int customerId;
     private String customerName;
@@ -13,15 +17,31 @@ public class Customer {
     private String zipCode;
     private LocalDateTime createdDateTime;
     private String createdBy;
-    private LocalDateTime lastUpdated;
+    private Timestamp lastUpdated;
     private String lastUpdatedBy;
     private int divisionID;
 
 
+    /**
+     * Empty default Customer constructor.
+     */
     public Customer() {
     }
 
-    public Customer(int customerId, String customerName, String address, String phoneNumber, String zipCode, LocalDateTime createdDateTime, String createdBy, LocalDateTime lastUpdated, String lastUpdatedBy, int divisionID) {
+    /**
+     * Customer constructor
+     * @param customerId customer Id
+     * @param customerName customer name
+     * @param address customers street address
+     * @param phoneNumber customers phone number
+     * @param zipCode customers zip code
+     * @param createdDateTime date and time customer was created
+     * @param createdBy user's name who created the customer
+     * @param lastUpdated date and time customer info was updated or changed
+     * @param lastUpdatedBy user's name that last updated the customer info
+     * @param divisionID state id code
+     */
+    public Customer(int customerId, String customerName, String address, String phoneNumber, String zipCode, LocalDateTime createdDateTime, String createdBy, Timestamp lastUpdated, String lastUpdatedBy, int divisionID) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.address = address;
@@ -93,7 +113,7 @@ public class Customer {
         return createdBy;
     }
 
-    public void setLastUpdated(LocalDateTime lastUpdated) {
+    public void setLastUpdated(Timestamp lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
@@ -101,7 +121,7 @@ public class Customer {
         return TimeConversion.formateDate(getLastUpdated());
     }
 
-    public LocalDateTime getLastUpdated() {
+    public Timestamp getLastUpdated() {
         return  lastUpdated;
     }
 

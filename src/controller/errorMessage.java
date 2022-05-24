@@ -2,12 +2,21 @@ package controller;
 
 import javafx.scene.control.Alert;
 
+import java.sql.SQLException;
+
 public class errorMessage {
 
     public static void emptyField() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error Check Fields");
         alert.setContentText("Error: One or more fields may be empty.");
+        alert.showAndWait();
+    }
+
+    public static void SQLException(SQLException e) {
+        Alert alert = new Alert((Alert.AlertType.ERROR));
+        alert.setTitle("ERROR");
+        alert.setContentText("There was an error: " + e.getMessage());
         alert.showAndWait();
     }
 
