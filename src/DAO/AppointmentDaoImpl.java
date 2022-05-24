@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import model.Appointment;
+import main.main;
 
 import javax.management.Query;
 import java.sql.*;

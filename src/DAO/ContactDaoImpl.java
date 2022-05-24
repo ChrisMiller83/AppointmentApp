@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import model.Contact;
+import main.main;
 
 import javax.management.Query;
 import java.sql.Connection;
